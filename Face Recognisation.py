@@ -10,12 +10,12 @@ from deepface import DeepFace
 # for the purpose of videocapture
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)# to give width size
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)# to give width height
 
 counter = 0
 
-face_match = False
+face_match = False# if face doesnot matches then false
 
 reference_img = cv2.imread("reference.jng")
 
@@ -25,7 +25,7 @@ def check_face(frame):
 
     try:
         if deepface.verify(frame, reference_img.copy())["verified"]:
-            face_match = True
+            face_match = True# if face matches then true
 
         else:
             face_match = False
