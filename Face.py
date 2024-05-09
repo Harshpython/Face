@@ -1,3 +1,4 @@
+# imoort threading used for User Interface Responsiveness
 import threading
 
 import cv2  #used for working with image and videoprocessing
@@ -11,7 +12,7 @@ from deepface import DeepFace
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)# setting up the camera width and height
 
 counter = 0
 
@@ -20,7 +21,7 @@ face_match = False
 reference_img = cv2.imread("reference.jng")
 
 def check_face(frame):
-    global face_match
+    global face_match# face detection
 
     try:
         if DeepFace.verify(frame, reference_img.copy())["verified"]:
@@ -47,7 +48,7 @@ while True:
 
         counter += 1
 
-        if face_match:
+        if face_match:# defined
             cv2.putText(frame,"MATCH",(20,450),cv2.FONT_HERSHEY_SIMPLEX,2,(0,255,0),3)
 
         else:
