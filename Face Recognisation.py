@@ -1,3 +1,4 @@
+# import threading
 import threading
 
 import cv2  # used for working with image and video processing
@@ -14,7 +15,7 @@ cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)# to give width size
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)# to give width height
 
 counter = 0
-
+# initial counter set to zero
 face_match = False# if face doesnot matches then false
 
 reference_img = cv2.imread("reference.jng")
@@ -30,7 +31,7 @@ def check_face(frame):
         else:
             face_match = False
 
-    except ValueError:
+    except ValueError:# exception handling
         face_match=False
 
 
@@ -49,7 +50,7 @@ while True:
 
         counter += 1
 
-        if face_match:
+        if face_match:# condition used
             cv2.putText(frame, "MATCH", (20, 450), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 0), 3)
 
         else:
