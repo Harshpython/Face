@@ -16,7 +16,7 @@ cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)# setting up the camera width and height
 
 counter = 0
 
-face_match = False
+face_match = False # if face doesnot match then no occurence
 
 reference_img = cv2.imread("reference.jng")
 
@@ -31,7 +31,7 @@ def check_face(frame):
             face_match=False
 
     except ValueError:
-        pass
+        pass # used to run the function
 
 
 
@@ -54,7 +54,7 @@ while True:
         else:
             cv2.putText(frame, "MATCH", (20, 450), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 3)
 
-        cv2.inshow("video",frame)
+        cv2.inshow("video",frame)# to show the face
 
 
 
