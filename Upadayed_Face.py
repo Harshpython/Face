@@ -25,9 +25,9 @@ face_detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 
 # If these directories don't exist, create them
-if not os.path.isdir('Attendance'):
+if not os.path.isdir('Attendance'):# fro attendence
     os.makedirs('Attendance')
-if not os.path.isdir('static'):
+if not os.path.isdir('static'):#for directory
     os.makedirs('static')
 if not os.path.isdir('static/faces'):
     os.makedirs('static/faces')
@@ -54,7 +54,7 @@ def extract_faces(img):
 # Identify face using ML model
 def identify_face(facearray):
     model = joblib.load('static/face_recognition_model.pkl')
-    return model.predict(facearray)
+    return model.predict(facearray)#prediction
 
 
 # A function which trains the model on all the faces available in faces folder
@@ -69,7 +69,7 @@ def train_model():
             faces.append(resized_face.ravel())
             labels.append(user)
     faces = np.array(faces)
-    knn = KNeighborsClassifier(n_neighbors=5)
+    knn = KNeighborsClassifier(n_neighbors=5)#
     knn.fit(faces, labels)
     joblib.dump(knn, 'static/face_recognition_model.pkl')
 
