@@ -1,7 +1,8 @@
 # import threading
 import threading
 
-import cv2  # used for working with image and video processing
+import cv2  
+# used for working with image and video processing
 
 from deepface import DeepFace
 
@@ -11,8 +12,10 @@ from deepface import DeepFace
 # for the purpose of videocapture
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)# to give width size
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)# to give width height
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+# to give width size
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+# to give width height
 
 counter = 0
 # initial counter set to zero
