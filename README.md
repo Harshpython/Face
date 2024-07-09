@@ -7,3 +7,4 @@ Face detection in images and video streams.
 Face recognition using pre-trained models.
 Real-time face recognition using a webcam.
 Easy-to-use command line interface.
+ 
