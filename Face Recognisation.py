@@ -4,7 +4,7 @@ import threading
 import cv2  
 # used for working with image and video processing
 
-from deepface import DeepFace  
+from deepface import DeepFace    
 
 # face recognisation and facial attribute analysis
 
