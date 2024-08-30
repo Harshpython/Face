@@ -6,9 +6,6 @@ import cv2  #used for working with image and videoprocessing
 from deepface import DeepFace
 
 #face recognisation and facial attribute analysis 
-
-
-
 # for the purpose of videocapture
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 # for reading csv
